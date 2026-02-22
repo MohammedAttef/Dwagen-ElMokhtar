@@ -1,0 +1,28 @@
+<header class="header">
+  <div class="container header-container">
+
+    <!-- Logo -->
+    <a routerLink="/" class="logo text-primary">
+      المختار
+    </a>
+
+    <!-- Navigation -->
+    <nav class="nav-menu" [class.active]="isMobileMenuOpen()">
+      <ul class="nav-list">
+        <li><a routerLink="/" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}" class="nav-link"
+            (click)="closeMobileMenu()">الرئيسية</a></li>
+        <li><a routerLink="/products" routerLinkActive="active" class="nav-link"
+            (click)="closeMobileMenu()">منتجاتنا</a></li>
+        <li><a href="https://wa.me/201122222222" target="_blank" class="nav-link" (click)="closeMobileMenu()">تواصل
+            معنا</a></li>
+      </ul>
+    </nav>
+
+    <!-- Mobile Menu Toggle -->
+    <button class="mobile-menu-btn" (click)="toggleMobileMenu()" aria-label="القائمة">
+      <i class="ri-menu-line" *ngIf="!isMobileMenuOpen()"></i>
+      <i class="ri-close-line" *ngIf="isMobileMenuOpen()"></i>
+    </button>
+
+  </div>
+</header>

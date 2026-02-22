@@ -1,0 +1,114 @@
+<main class="product-details-page section-padding pt-0" *ngIf="product() as p" dir="rtl">
+  <div class="container mt-2xl">
+    <div class="product-layout">
+
+      <!-- Right Side: Details -->
+      <div class="product-info" data-aos="fade-left">
+        <div class="product-meta flex items-center gap-md font-bold">
+          <span class="product-badge" [ngClass]="categoryName() === 'فريش' ? 'badge-fresh' : 'badge-new'">{{
+            categoryName() }}</span>
+          <span class="product-code text-muted">كود المنتج : {{ p.id }}</span>
+        </div>
+
+        <h1 class="product-title text-5xl font-extrabold" style="color: var(--text-dark)">{{ p.name }}</h1>
+
+        <div class="product-price-section flex items-baseline gap-sm justify-start">
+          <span class="price-val font-bold" style="color: var(--accent-yellow); font-size: 3.5rem; line-height: 1;">{{
+            totalPrice() | number:'1.2-2' }}</span>
+          <span class="currency text-xl text-muted font-bold">ج.م</span>
+        </div>
+
+        <div class="availability text-success flex items-center gap-xs font-bold">
+          <i class="ri-check-line text-xl"></i>
+          متوفر في المخزون (توصيل فوري)
+        </div>
+
+        <div class="weight-selection">
+          <h3 class="font-extrabold text-xl" style="color: var(--text-dark); margin-bottom: var(--space-md)">اختر الوزن
+          </h3>
+          <div class="weight-options grid grid-cols-3 gap-md">
+            <!-- 0.5 Kilo -->
+            <button class="weight-btn" [class.active]="selectedWeight() === 0.5" (click)="setWeight(0.5)">
+              <span class="weight-val">½ كيلو</span>
+              <span class="weight-desc text-muted text-sm mt-xs block"></span>
+            </button>
+
+            <!-- 1 Kilo -->
+            <button class="weight-btn" [class.active]="selectedWeight() === 1" (click)="setWeight(1)">
+              <span class="most-popular font-bold">الأكثر طلباً</span>
+              <span class="weight-val">1 كيلو</span>
+              <span class="weight-desc text-danger text-sm mt-xs block"></span>
+            </button>
+
+            <!-- 2 Kilo -->
+            <button class="weight-btn" [class.active]="selectedWeight() === 2" (click)="setWeight(2)">
+              <span class="weight-val">2 كيلو</span>
+              <span class="weight-desc text-muted text-sm mt-xs block"></span>
+            </button>
+          </div>
+        </div>
+
+        <div class="quantity-wrapper">
+          <div class="quantity-control max-w-full flex items-center justify-between">
+            <button class="qty-btn" (click)="incrementQuantity()">
+              <i class="ri-add-line text-xl"></i>
+            </button>
+            <span class="qty-val text-2xl font-extrabold" style="color: var(--text-dark)">{{ quantity() }}</span>
+            <button class="qty-btn" (click)="decrementQuantity()" [disabled]="quantity() <= 1">
+              <i class="ri-subtract-line text-xl"></i>
+            </button>
+          </div>
+        </div>
+
+        <!-- WhatsApp Order Button -->
+        <a href="Https://WA.me/+201070050576" target="_blank"
+          class="order-now-btn w-full flex items-center justify-center gap-sm">
+          <i class="ri-whatsapp-line text-2xl"></i>
+          اطلب الان
+        </a>
+
+        <div class="features-grid grid grid-cols-3 gap-md text-center" style="margin-top: var(--space-md)">
+          <div class="feature-item">
+            <div
+              class="feature-icon bg-secondary text-primary rounded-full flex items-center justify-center mx-auto mb-sm">
+              <i class="ri-shield-check-line" style="font-size: 1.5rem;"></i>
+            </div>
+            <span class="text-sm text-muted font-bold">جودة مضمونة</span>
+          </div>
+
+          <div class="feature-item">
+            <div
+              class="feature-icon bg-secondary text-primary rounded-full flex items-center justify-center mx-auto mb-sm">
+              <i class="ri-flashlight-line" style="font-size: 1.5rem;"></i>
+            </div>
+            <span class="text-sm text-muted font-bold">توصيل سريع</span>
+          </div>
+
+          <div class="feature-item">
+            <div
+              class="feature-icon bg-secondary text-primary rounded-full flex items-center justify-center mx-auto mb-sm">
+              <i class="ri-heart-pulse-line" style="font-size: 1.5rem;"></i>
+            </div>
+            <span class="text-sm text-muted font-bold">تغذية سليمة</span>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- Left Side: Image -->
+      <div class="product-image-container relative rounded-2xl overflow-hidden h-full">
+        <img [src]="p.photo" [alt]="p.name" class="w-full h-full object-cover" width="800" height="600"
+          fetchpriority="high">
+
+        <div
+          class="image-label absolute bg-white px-md py-sm flex items-center gap-xs shadow-sm font-bold text-sm text-dark">
+          <span>ذبح اليوم</span>
+          <span class="text-success flex items-center">
+            <i class="ri-checkbox-circle-fill text-lg"></i>
+          </span>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</main>

@@ -1,0 +1,9 @@
+<svg xmlns="http://www.2000/svg" viewBox="0 0 150 50">
+  <!-- Chicken Silhouette -->
+  <path d="M15 25 Q15 15 25 15 Q35 15 35 25 M35 25 Q35 35 25 35 Q15 35 15 25" fill="none" stroke="#bb1f26" stroke-width="3"/>
+  <!-- Beak -->
+  <polygon points="35,23 35,27 40,25" fill="#f59e0b"/>
+  <!-- Text -->
+  <text x="45" y="32" font-family="Cairo, sans-serif" font-weight="700" font-size="20" fill="#1b1b1b">مزارعنا</text>
+  <text x="45" y="44" font-family="Cairo, sans-serif" font-weight="600" font-size="10" fill="#bb1f26">للدواجن الطازجة</text>
+</svg>

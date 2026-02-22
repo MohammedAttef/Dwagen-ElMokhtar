@@ -1,0 +1,41 @@
+.highlights-section {
+  background-color: var(--bg-main);
+  position: relative;
+  z-index: 10;
+}
+
+.pb-0 {
+  padding-bottom: 0 !important;
+}
+
+.pb-2xl {
+  padding-bottom: var(--space-2xl);
+}
+
+.mt-sm {
+  margin-top: var(--space-sm);
+}
+
+.stat-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: var(--space-md);
+  transition: transform var(--transition-normal);
+}
+
+.stat-item:hover {
+  transform: translateY(-5px);
+}
+
+.stat-value {
+  font-size: 2.5rem;
+  font-weight: 800;
+  line-height: 1;
+}
+
+.stat-label {
+  font-size: 1.125rem;
+  font-weight: 600;
+}

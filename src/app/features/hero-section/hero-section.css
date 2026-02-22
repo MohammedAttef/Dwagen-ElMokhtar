@@ -1,0 +1,230 @@
+.hero-section {
+  position: relative;
+  overflow: hidden;
+  background: linear-gradient(135deg, rgba(252, 235, 235, 0.4) 0%, rgba(255, 255, 255, 1) 100%);
+  padding-top: var(--space-2xl);
+  /* Override padding for hero specifically */
+}
+
+/* --- Hero Badge --- */
+.hero-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-sm);
+  background-color: var(--secondary-color);
+  color: var(--primary-color);
+  padding: var(--space-xs) var(--space-md);
+  border-radius: var(--radius-full);
+  font-size: 0.875rem;
+  font-weight: 600;
+  margin-bottom: var(--space-lg);
+}
+
+.badge-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background-color: var(--primary-color);
+}
+
+/* --- Hero Typography --- */
+.hero-title {
+  font-size: clamp(2.5rem, 5vw, 4rem);
+  line-height: 1.1;
+  color: var(--text-dark);
+  margin-bottom: var(--space-md);
+}
+
+/* Custom underline highlight style for "الطازجة يوميًا" */
+.highlighted-text {
+  position: relative;
+  display: inline-block;
+}
+
+.highlighted-text::after {
+  content: '';
+  position: absolute;
+  bottom: 5px;
+  left: 0;
+  width: 100%;
+  height: 15px;
+  background-color: rgba(187, 31, 38, 0.15);
+  /* Light primary color */
+  z-index: -1;
+  transform: skewX(-15deg);
+}
+
+.hero-subtitle {
+  font-size: 1.125rem;
+  color: var(--text-muted);
+  max-width: 500px;
+  line-height: 1.6;
+}
+
+/* --- Features List --- */
+.hero-features {
+  margin-top: var(--space-lg);
+  flex-wrap: wrap;
+}
+
+.hero-features li {
+  display: flex;
+  align-items: center;
+  gap: var(--space-xs);
+  font-weight: 600;
+  color: var(--text-dark);
+}
+
+/* --- Action Buttons --- */
+.hero-actions {
+  margin-top: var(--space-2xl);
+}
+
+.hero-btn {
+  padding: 1rem 2rem;
+  font-size: 1.1rem;
+}
+
+.hero-btn-outline {
+  padding: 1rem 2rem;
+  font-size: 1.1rem;
+  background-color: var(--secondary-color);
+  color: var(--primary-color);
+  border-radius: var(--radius-full);
+  border: none;
+  font-weight: 600;
+  transition: all var(--transition-fast);
+}
+
+.hero-btn-outline:hover {
+  background-color: var(--primary-color);
+  color: var(--text-light);
+  transform: translateY(-2px);
+}
+
+/* --- Hero Image Area --- */
+.hero-image-wrapper {
+  position: relative;
+  width: 100%;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.main-image {
+  border-radius: var(--radius-xl);
+  overflow: hidden;
+  box-shadow: var(--shadow-lg);
+  position: relative;
+  z-index: 1;
+}
+
+.main-image img {
+  width: 100%;
+  height: auto;
+  aspect-ratio: 4/3;
+  object-fit: cover;
+}
+
+.floating-image {
+  position: absolute;
+  bottom: -10%;
+  left: -10%;
+  width: 40%;
+  border-radius: var(--radius-lg);
+  border: 4px solid var(--bg-main);
+  overflow: hidden;
+  z-index: 2;
+  box-shadow: var(--shadow-md);
+}
+
+.floating-badge {
+  position: absolute;
+  bottom: 20%;
+  right: -5%;
+  background-color: var(--bg-main);
+  border-radius: var(--radius-full);
+  padding: var(--space-sm) var(--space-md);
+  display: flex;
+  align-items: center;
+  gap: var(--space-sm);
+  z-index: 3;
+  box-shadow: var(--shadow-lg);
+}
+
+.badge-content {
+  display: flex;
+  flex-direction: column;
+}
+
+.badge-title {
+  font-size: 0.75rem;
+  color: var(--text-muted);
+}
+
+.badge-value {
+  font-size: 0.875rem;
+  font-weight: 700;
+  color: var(--text-dark);
+}
+
+.badge-icon-wrap {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: rgba(16, 185, 129, 0.1);
+}
+
+.bg-accent-green svg {
+  color: var(--accent-green);
+}
+
+@media (max-width: 1024px) {
+  .hero-container {
+    text-align: center;
+  }
+
+  .hero-subtitle {
+    margin: 0 auto;
+  }
+
+  .hero-features {
+    justify-content: center;
+  }
+
+  .highlighted-text::after {
+    left: 50%;
+    transform: translateX(-50%) skewX(-15deg);
+  }
+
+  .hero-actions {
+    justify-content: center;
+  }
+
+  .hero-image-wrapper {
+    margin-top: var(--space-3xl);
+  }
+}
+
+@media (max-width: 768px) {
+  .hero-actions {
+    flex-direction: column;
+    width: 100%;
+  }
+
+  .hero-btn,
+  .hero-btn-outline {
+    width: 100%;
+  }
+
+  .floating-image {
+    left: 0;
+    width: 50%;
+  }
+
+  .floating-badge {
+    right: 5%;
+  }
+}

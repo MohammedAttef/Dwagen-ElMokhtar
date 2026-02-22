@@ -1,0 +1,100 @@
+.navbar {
+  height: 70px;
+  background: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 2rem;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.06);
+  direction: rtl;
+  position: relative;
+  z-index: 1000;
+}
+
+/* Logo */
+.logo {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  font-weight: bold;
+}
+
+.brand {
+  font-size: 1.4rem;
+  font-weight: 700;
+  color: #d32222;
+}
+
+.sub {
+  font-size: 0.8rem;
+  color: #777;
+}
+
+/* Links */
+.links {
+  display: flex;
+  gap: 2rem;
+}
+
+.links a {
+  text-decoration: none;
+  color: #333;
+  font-weight: 600;
+  transition: 0.2s;
+  cursor: pointer;
+}
+
+.links a:hover {
+  color: #d32222;
+}
+
+.links a.active {
+  color: #d32222;
+}
+
+/* Hamburger */
+.menu-icon {
+  display: none;
+  font-size: 1.8rem;
+  cursor: pointer;
+}
+
+/* Mobile Menu */
+.mobile-menu {
+  display: none;
+  flex-direction: column;
+  background: #fff;
+  padding: 1rem 2rem;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+}
+
+.mobile-menu a {
+  padding: 0.8rem 0;
+  text-decoration: none;
+  color: #333;
+  font-weight: 600;
+
+}
+
+.mobile-menu a.active {
+  color: #d32222;
+}
+
+/* Responsive */
+@media (max-width: 900px) {
+  .desktop-links {
+    display: none;
+  }
+
+  .menu-icon {
+    display: block;
+  }
+
+  .mobile-menu {
+    display: none;
+  }
+
+  .mobile-menu.open {
+    display: flex;
+  }
+}
