@@ -10,7 +10,7 @@
 }
 
 .section-subtitle {
-  max-width: 600px;
+  /* max-width: 100%; */
   font-size: 1.125rem;
   line-height: 1.6;
   margin-bottom: var(--space-md);
