@@ -13,15 +13,20 @@
             (click)="closeMobileMenu()">الرئيسية</a></li>
         <li><a routerLink="/products" routerLinkActive="active" class="nav-link"
             (click)="closeMobileMenu()">منتجاتنا</a></li>
-        <li><a href="https://wa.me/201122222222" target="_blank" class="nav-link" (click)="closeMobileMenu()">تواصل
+        <li><a href="https://wa.me/+201070050576" target="_blank" class="nav-link" (click)="closeMobileMenu()">تواصل
             معنا</a></li>
       </ul>
     </nav>
 
     <!-- Mobile Menu Toggle -->
     <button class="mobile-menu-btn" (click)="toggleMobileMenu()" aria-label="القائمة">
-      <i class="ri-menu-line" *ngIf="!isMobileMenuOpen()"></i>
-      <i class="ri-close-line" *ngIf="isMobileMenuOpen()"></i>
+      @if(!isMobileMenuOpen()){
+
+      <i class="ri-menu-line"></i>
+      }@else {
+
+      <i class="ri-close-line"></i>
+      }
     </button>
 
   </div>
